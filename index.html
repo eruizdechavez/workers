@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Worker Test</title>
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="row">
+        <h1>Web Workers Demo</h1>
+        <p>Have you ever wonder what is the result of 1 + 2 + 3 + 4 + ... + 2,500,000,000? If so, I have the solution to your question.</p>
+        <p>This is a quite simple example of how we can delegate a heavy process to a new thread instead of completely blocking the UI.</p>
+      </div>
+      <div class="row">
+        <hr>
+      </div>
+      <div class="row">
+        <div class="span6" id="loop">
+          <h2>Standard "For" <button class="btn">Go!</button></h2>
+          <p>With a standard For your browser will be frozen cause the calculation keeps it so busy that cannot respond to UI interactions, not even a progress bar is displayed (the code to show it is there, thrust me!). Once the calculation is done, the browser goes back to normal operation.</p>
+        </div>
+        <div class="span6" id="worker">
+          <h2>Web Worker <button class="btn">Go!</button></h2>
+          <p>With a web worker running on the background, your browser is happy and can show a progress bar while the calculation is in progress.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span6" id="loop">
+          <div class="well"></div>
+          <div class="progress progress-striped active hide">
+            <div class="bar" style="width: 100%;"></div>
+          </div>
+        </div>
+        <div class="span6" id="worker">
+          <div class="well"></div>
+          <div class="progress progress-striped active hide">
+            <div class="bar" style="width: 100%;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="js/libs/require/require.js" data-main="js/main"></script>
+  </body>
+</html>
